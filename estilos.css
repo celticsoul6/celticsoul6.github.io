@@ -257,17 +257,20 @@ footer {
     }
 
     /* 📌 CUADROS DE ARTÍCULOS EN MÓVIL */
-    .articles-container {
-        display: flex;
-        flex-direction: column; /* ✅ Hace que los cuadros estén uno sobre otro */
-        align-items: center;
+   .articles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     }
 
+
     .article-box {
-        width: 90%; /* ✅ Ocupa casi toda la pantalla */
-        min-height: auto; /* Ajusta la altura según el contenido */
-        margin-bottom: 20px; /* Espacio entre cuadros */
-    }
+    width: 95%; /* Más espacio aprovechado */
+    max-width: 400px; /* Evita que se estire demasiado */
+    min-height: auto;
+    margin-bottom: 20px;
+    } 
 
     /* 📌 BOTÓN DE REGRESAR */
     .link-container {
@@ -277,9 +280,10 @@ footer {
     }
 
     /* 📌 FOOTER FIJO ABAJO */
-    footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%;
+   footer {
+    position: relative; /* ✅ Se queda al final del contenido */
+    width: 100%;
+    margin-top: 30px; /* Espacio antes del footer */
+    text-align: center;
     }
 }
