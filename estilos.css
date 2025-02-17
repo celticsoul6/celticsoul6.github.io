@@ -231,82 +231,65 @@ footer {
     }
 
    /* 🌟 Ajustes para pantallas pequeñas (Móviles) */
+
+
+   /* 📌 Ajustes para móviles */
 @media screen and (max-width: 768px) {
-    
-    /* ✅ Ajustar el header */
+    /* Alinear los artículos uno sobre otro */
+    .articles-container {
+        display: flex;
+        flex-direction: column; /* Hace que las tarjetas se apilen */
+        align-items: center; /* Centra los artículos */
+    }
+
+    .article-box {
+        width: 90%; /* Ajusta el tamaño */
+        max-width: 400px; /* Limita el ancho */
+        margin-bottom: 20px; /* Espacio entre cada artículo */
+    }
+
+    /* 📌 Ajustes del Header */
     header {
-        flex-direction: column; /* Apila los elementos verticalmente */
-        align-items: center; /* Centra los elementos */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
+        padding: 10px 0;
     }
 
     header .logo img {
-        height: 50px; /* Reduce el tamaño del logo */
-        margin-left: 0;
+        height: 60px; /* Ajustar tamaño */
+        margin: 0 auto; /* Centrar */
     }
 
     header .whats img {
         height: 50px;
         width: 50px;
-        margin-right: 0;
-        margin-top: 10px; /* Agrega espacio para que no se vea pegado */
+        margin: 10px 0;
     }
 
-    /* ✅ Fijar el botón de regresar en la parte superior */
+    /* 📌 Hacer que el botón de regresar quede fijo */
     .link-container {
         position: fixed;
-        top: 10px; 
+        top: 15px;
         left: 10px;
-        z-index: 1000; 
+        z-index: 999;
     }
 
-    /* ✅ Hacer que los cuadros de los artículos se apilen en móviles */
-    .articles {
-        display: flex;
-        flex-direction: column; /* Apila los artículos verticalmente */
-        align-items: center; /* Centra los cuadros */
-    }
-
-    .article-box {
-        width: 90%; /* Ocupa casi todo el ancho en móvil */
-        margin-bottom: 20px; /* Espacio entre los cuadros */
-    }
-}
-
-
-    /* Asegurar que el texto no sea demasiado ancho */
-    p {
-        max-width: 90%;
-        margin: 0 auto;
-        text-align: justify;
-    }
-
-    /* Ajustar listas */
-    ul {
-        padding-left: 20px;
-    }
-
-    /* Asegurar que los botones sean accesibles */
-    .custom-link {
-        display: block;
-        text-align: center;
-        padding: 10px;
-        font-size: 1.1em;
-    }
-
-    /* Autor responsivo */
-    .author-section {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .author-section img {
-        margin: 0 auto 10px auto;
-    }
-
-    /* Footer centrado */
+    /* 📌 Ajustes del Footer */
     footer {
+        position: fixed; /* Lo fija en la parte inferior */
+        bottom: 0;
+        width: 100%;
         text-align: center;
-        padding: 15px 0;
+        background-color: #004080;
+        color: white;
+        padding: 10px 0;
+    }
+
+    /* 📌 Ajustar el contenido principal */
+    main.article-content {
+        width: 95%;
+        padding: 15px;
     }
 }
