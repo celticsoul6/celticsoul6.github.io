@@ -66,7 +66,13 @@ body {
     padding: 0;
     background-color: #f0f0f0;
 }
-
+/* 📌 Evitar que la página se desplace lateralmente */
+html, body {
+    overflow-x: hidden; /* 🔹 Bloquea el desplazamiento horizontal */
+    width: 100%; /* 🔹 Asegura que no haya desbordes */
+    margin: 0;
+    padding: 0;
+}
 
 /* Header */
 header  {
@@ -268,94 +274,96 @@ footer {
     color: white;
 }
 
-/* Media Queries para pantallas pequeñas (móviles y tablets) */
+
+ /* ✅ Ajustes para móviles */
 @media screen and (max-width: 768px) {
-    /* Ajustar tamaño de fuente y márgenes */
-    body {
-        font-size: 16px;
-    }
+    
 
-    main.article-content {
-        padding: 15px;
-        margin: 20px auto;
-    }
-
-    main h1 {
-        font-size: 1.5em;
-        padding: 15px;
-        text-align: center;
-    }
-
-    main h2 {
-        font-size: 1.3em;
-    }
-
-    /* Header responsive */
     header {
-        flex-direction: column;
+        display: flex;
         align-items: center;
-        padding: 10px;
-        text-align: center;
+        justify-content: space-between; /* Logo a la izquierda, WhatsApp a la derecha */
+        padding: 10px 20px;
+        background-color: #b0d4f1;
+        position: relative;
+        width: 100%;
+        height: 70px;
+    }
+
+    header .logo {
+        display: block;
+        align-items: center;
     }
 
     header .logo img {
-        height: 50px; /* Reduce el tamaño del logo */
+        height: 60px;
+        max-width: 180px;
+        display: block;
+    }
+
+    header .whats {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 50%; /* Lo centra verticalmente */
+        right: 20px; /* Lo pega al borde derecho */
+        transform: translateY(-50%); /* Asegura que esté perfectamente centrado */
     }
 
     header .whats img {
-        height: 40px;
         width: 40px;
-        margin: 10px 0;
+        height: 40px;
+        opacity: 0.9;
     }
-
-    /* Ajustar imágenes */
-    img {
-        max-width: 100%;
-        height: auto;
-        float: none;
-        display: block;
-        margin: 10px auto;
-    }
-
-    /* Ajustar el contenido para que no se salga */
-    .article-box {
+     /* 📌 Hacer que los artículos estén en columna */
+    .articles {
+        display: flex;
+        flex-direction: column; /* Apilar los elementos */
+        align-items: center; /* Centrar los artículos */
         width: 100%;
+        padding: 20px;
+        gap: 15px; /* Espacio entre los cuadros */
+    }
+
+    /* 📌 Ajustar tamaño de los artículos */
+    .article-box {
+        width: 90%; /* Usar el 90% del ancho */
+        max-width: 350px; /* Limitar el tamaño máximo */
         min-height: auto;
-    }
-
-    /* Asegurar que el texto no sea demasiado ancho */
-    p {
-        max-width: 90%;
-        margin: 0 auto;
-        text-align: justify;
-    }
-
-    /* Ajustar listas */
-    ul {
-        padding-left: 20px;
-    }
-
-    /* Asegurar que los botones sean accesibles */
-    .custom-link {
-        display: block;
-        text-align: center;
+        margin-bottom: 15px;
         padding: 10px;
-        font-size: 1.1em;
-    }
-
-    /* Autor responsivo */
-    .author-section {
+        justify-content: space-between;
         flex-direction: column;
-        text-align: center;
+        align-items: center; /* Centra el contenido dentro del cuadro */
     }
-
-    .author-section img {
-        margin: 0 auto 10px auto;
-    }
-
-    /* Footer centrado */
-    footer {
-        text-align: center;
-        padding: 15px 0;
+    .article-box img {
+    width: 99%; /* Asegurar que ocupe todo el ancho */
+    height: auto; /* Mantener la proporción */
+    max-height: 200px; /* Reducir el tamaño máximo de la imagen */
+    object-fit: cover; /* Recortar la imagen si es necesario */
+    border-radius: 10px;
     }
 }
+
+
+
+
+
+/* 📌 BOTÓN DE REGRESAR */
+.link-container {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+/* 📌 FOOTER FIJO ABAJO */
+footer {
+    position: relative; /* ✅ Se queda al final del contenido */
+    width: 100%;
+    margin-top: 30px; /* Espacio antes del footer */
+    text-align: center;
+}
+
+
+

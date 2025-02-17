@@ -34,6 +34,13 @@
     font-weight: normal;
     font-style: normal;
 }
+/* 📌 Evitar que la página se desplace lateralmente */
+html, body {
+    overflow-x: hidden; /* 🔹 Bloquea el desplazamiento horizontal */
+    width: 100%; /* 🔹 Asegura que no haya desbordes */
+    margin: 0;
+    padding: 0;
+}
 
 body {
     font-family: 'Alte regular', sans-serif;
@@ -50,7 +57,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
+    position: relative;
     top: 0;
     width: 100%;
 }
@@ -67,6 +74,7 @@ header .whats img {
     width: 50px;
     cursor: pointer;
     margin-right: 50px;
+    position: absolute;
 }
 
 .blog-header h1 {
@@ -207,83 +215,92 @@ footer {
     padding: 10px 0;
     background-color: #004080;
     color: white;
-}
-/* Media Queries para pantallas pequeñas (móviles y tablets) */
-@media screen and (max-width: 768px) {
-    /* Ajustar tamaño de fuente y márgenes */
-    body {
-        font-size: 16px;
-    }
-
-    main.article-content {
-        padding: 15px;
-        margin: 20px auto;
-    }
-
-    main h1 {
-        font-size: 1.5em;
-        padding: 15px;
-        text-align: center;
-    }
-
-    main h2 {
-        font-size: 1.3em;
-    }
-
-   /* 🌟 Ajustes para pantallas pequeñas (Móviles) */
-
-
- /* ✅ Ajustes para móviles */
+} /* ✅ Ajustes para móviles */
 @media screen and (max-width: 768px) {
     
-    /* 📌 LOGO Y HEADER */
+
     header {
-        flex-direction: column;
+        display: flex;
         align-items: center;
-        text-align: center;
-        padding: 10px;
+        justify-content: space-between; /* Logo a la izquierda, WhatsApp a la derecha */
+        padding: 10px 20px;
+        background-color: #b0d4f1;
+        position: relative;
+        width: 100%;
+        height: 70px;
+    }
+
+    header .logo {
+        display: block;
+        align-items: center;
     }
 
     header .logo img {
-        height: 60px; /* Ajuste de tamaño para móvil */
-        margin-left: 0;
-        margin-bottom: 10px;
+        height: 60px;
+        max-width: 180px;
+        display: block;
+    }
+
+    header .whats {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 50%; /* Lo centra verticalmente */
+        right: 20px; /* Lo pega al borde derecho */
+        transform: translateY(-50%); /* Asegura que esté perfectamente centrado */
     }
 
     header .whats img {
-        width: 50px;
-        height: 50px;
-        margin-right: 0;
+        width: 40px;
+        height: 40px;
+        opacity: 0.9;
+    }
+     /* 📌 Hacer que los artículos estén en columna */
+    .articles {
+        display: flex;
+        flex-direction: column; /* Apilar los elementos */
+        align-items: center; /* Centrar los artículos */
+        width: 100%;
+        padding: 20px;
+        gap: 15px; /* Espacio entre los cuadros */
     }
 
-    /* 📌 CUADROS DE ARTÍCULOS EN MÓVIL */
-   .articles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    }
-
-
+    /* 📌 Ajustar tamaño de los artículos */
     .article-box {
-    width: 95%; /* Más espacio aprovechado */
-    max-width: 400px; /* Evita que se estire demasiado */
-    min-height: auto;
-    margin-bottom: 20px;
-    } 
-
-    /* 📌 BOTÓN DE REGRESAR */
-    .link-container {
-        position: fixed;
-        top: 10px;
-        left: 10px;
+        width: 90%; /* Usar el 90% del ancho */
+        max-width: 350px; /* Limitar el tamaño máximo */
+        min-height: auto;
+        margin-bottom: 15px;
+        padding: 10px;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center; /* Centra el contenido dentro del cuadro */
     }
-
-    /* 📌 FOOTER FIJO ABAJO */
-   footer {
-    position: relative; /* ✅ Se queda al final del contenido */
-    width: 100%;
-    margin-top: 30px; /* Espacio antes del footer */
-    text-align: center;
+    .article-box img {
+    width: 99%; /* Asegurar que ocupe todo el ancho */
+    height: auto; /* Mantener la proporción */
+    max-height: 200px; /* Reducir el tamaño máximo de la imagen */
+    object-fit: cover; /* Recortar la imagen si es necesario */
+    border-radius: 10px;
     }
 }
+
+
+
+
+
+
+
+footer {
+    width: 100%;
+    background-color: #004080;
+    color: white;
+    text-align: center;
+    padding: 20px 0; /* 🔹 Asegurar altura suficiente */
+    font-size: 1em; /* 🔹 Asegurar que el texto no sea demasiado pequeño */
+    position: relative; /* 🔹 Evitar que se sobreponga */
+}
+
+
+
