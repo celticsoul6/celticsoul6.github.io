@@ -5,60 +5,46 @@
     src: url('fonts/cocogoose\ light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
 }
+
+@font-face {
+    font-family: 'Coolvetica';
+    src: url('fonts/Coolvetica-RG.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @font-face {
     font-family: 'Cocogoose media';
     src: url('fonts/cocogoose\ media.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
-
-}
-/* Animación para los bloques de artículo */
-@keyframes slideUp {
-    0% {
-        transform: translateY(50px); /* Inicia con desplazamiento hacia abajo */
-        opacity: 0; /* Inicia invisible */
-    }
-    100% {
-        transform: translateY(0); /* Se mueve hacia arriba */
-        opacity: 1; /* Se vuelve visible */
-    }
 }
 
-/* Animación para los bloques de artículo */
-
-
-/* Agregar retraso para la animación secuencial */
-.article-box:nth-child(1) {
-    animation-delay: 0.2s; /* Primer bloque con un retraso */
+@font-face {
+    font-family: 'Alte bold';
+    src: url('fonts/Alte\ bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.article-box:nth-child(2) {
-    animation-delay: 0.4s; /* Segundo bloque */
+@font-face {
+    font-family: 'Alte regular';
+    src: url('fonts/Alte\ regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
-
-.article-box:nth-child(3) {
-    animation-delay: 0.6s; /* Tercer bloque */
-}
-
-.article-box:nth-child(4) {
-    animation-delay: 0.8s; /* Cuarto bloque */
-}
-
-
-
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Alte regular', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
 }
 
 /* Header */
-header  {
-    background: linear-gradient(to right, #ffffff, #1CA9E0); /* De blanco a azul */
+header {
+    background: linear-gradient(to right, #ffffff, #1CA9E0);
     height: 30px;
     padding: 20px;
     display: flex;
@@ -67,131 +53,249 @@ header  {
     position: sticky;
     top: 0;
     width: 100%;
-    
 }
 
 header .logo img {
-    height: 70px; /* Ajusta el tamaño correcto aquí */
-    width: auto; /* Mantén la proporción */
+    height: 70px;
+    width: auto;
     margin-left: 20px;
     margin-top: 5px;
 }
-
 
 header .whats img {
     height: 70px;
     width: 50px;
     cursor: pointer;
-    margin-right: 20px;
-    
+    margin-right: 50px;
 }
 
 .blog-header h1 {
-    font-family: 'cocogoose media', sans-serif;
-    font-weight: 500; /* Aplica Cocogoose Media */
-    font-size: 2.5em; /* Tamaño para la letra grande */
+    font-family: 'Cocogoose media', sans-serif;
+    font-weight: 500;
+    font-size: 3em;
     text-align: center;
     color: #1B2060;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .blog-header h2 {
     font-family: 'Cocogoose light', sans-serif;
-    font-weight: 300; /* Aplica Cocogoose Light */
-    font-size: 1.5em; /* Tamaño para el subtítulo */
+    font-weight: 200;
+    font-size: 1.2em;
     text-align: center;
-    color: #1CA9E0; /* Cambia a un tono gris o el que prefieras */
-    margin-top: 5px;
+    color: #1CA9E0;
+    margin-top: 10px;
 }
 
 /* Articles Section */
 .articles {
     display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 40px auto;
+    justify-content: center;
+    align-items: stretch; /* Asegura que todos los cuadros tengan la misma altura */
     gap: 20px;
-    padding: 0 15px;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px;
+    margin-top: -20px;
 }
-.articles h2 {
-    font-family: 'cocogoose media', sans-serif;
-    font-weight: normal;
-}
-.articles p {
-    font-family: 'cocogoose light', sans-serif;
-    font-weight: normal;
-}
-
 
 .article-box {
     background: linear-gradient(to top, #004080, #87CEFA);
-    border-radius: 15px;
-    text-align: center;
+    width: 320px;
     color: white;
     padding: 20px;
-    width: 23%;
+    border-radius: 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-decoration: none !important;
+    overflow: visible;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    min-height: 400px;
+    height: 400px; /* Ajusta la altura para que todos sean iguales */
+    pointer-events: auto; /* ✅ Permite hacer clic */
+    z-index: 1;           /* ✅ Asegura que esté encima */
+    display: block;       /* ✅ Se muestra correctamente */
+    visibility: visible;  /* ✅ Es visible */
+    opacity: 1;
+
 }
 
 .article-box:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
 .article-box img {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    margin-bottom: 10px; /* Reduce el margen inferior */
+    margin-bottom: 10px;
 }
 
+
+
 .article-box h2 {
-    margin-top: 0; /* Elimina margen superior */
-    margin-bottom: 15px; /* Ajusta según lo que necesites */
-    font-size: 1.2em;
+    font-size: 1.5em;
+    font-family: 'Coolvetica', sans-serif;
+    font-weight: 500;
+    margin: 2px 0; /* Reduce aún más el espacio entre los textos */
+    color: #f0f0f0;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    max-height: none; /* ✅ Permite que el párrafo crezca según el contenido */
+    overflow: visible; /* ✅ Evita que se corte el texto */
+    white-space: normal; /* ✅ Permite saltos de línea */
+    text-overflow: clip; /* ✅ Asegura que el texto no termine en "..." */
 }
 
 .article-box p {
-    margin-bottom: 15px; /* Mantén o ajusta según lo que necesites */
-    font-size: 0.9em; /* Tamaño de la fuente */
-    text-align: justify; /* Justifica el texto */
-}
-
-.article-box .btn {
-    text-decoration: none;
-    color: white;
-    background-color: #003366;
-    padding: 10px 15px;
-    border-radius: 10px;
+    font-family: 'Alte bold', sans-serif;
     font-size: 0.9em;
-    transition: background-color 0.3s;
+    text-align: justify;
+    max-height: none; /* ✅ Permite que el párrafo crezca según el contenido */
+    overflow: visible; /* ✅ Evita que se corte el texto */
+    white-space: normal; /* ✅ Permite saltos de línea */
+    text-overflow: clip; /* ✅ Asegura que el texto no termine en "..." */
+    margin: 2px 0;
+    margin-top: 15px; 
 }
 
-.article-box .btn:hover {
-    background-color: #001f4d;
+
+/* Corrección: Eliminar subrayado en enlaces dentro de los títulos de los artículos */
+.article-box h2 a {
+    text-decoration: none !important;
+    color: inherit;
 }
-D
+
+.article-box h2 a:hover {
+    text-decoration: none !important;
+}
+
+.article-box a {
+    text-decoration: none !important;
+}
+
 .blog-header {
     text-align: center;
     margin-bottom: 30px;
-    font-family: 'Montserrat', sans-serif; /* Aplica la fuente Montserrat */
+    font-family: 'Montserrat', sans-serif;
 }
 
 .blog-header h1 {
-    font-size: 2.5em; /* Tamaño del título */
-    color: #003366;  /* Color del texto */
-    margin: 30;       /* Quita los márgenes predeterminados */
+    font-size: 2.5em;
+    color: #003366;
+    margin: 30;
+    margin-top: 30px;
 }
 
 .blog-header p {
-    font-size: 1.2em; /* Tamaño del subtítulo */
-    color: #004080;   /* Color del subtítulo */
-    margin: 5px 0 0;  /* Espaciado superior e inferior */
+    font-size: 1.2em;
+    color: #004080;
+    margin: 5px 0 0;
 }
+
 /* Footer */
 footer {
     text-align: center;
     padding: 10px 0;
     background-color: #004080;
     color: white;
+}
+/* Media Queries para pantallas pequeñas (móviles y tablets) */
+@media screen and (max-width: 768px) {
+    /* Ajustar tamaño de fuente y márgenes */
+    body {
+        font-size: 16px;
+    }
+
+    main.article-content {
+        padding: 15px;
+        margin: 20px auto;
+    }
+
+    main h1 {
+        font-size: 1.5em;
+        padding: 15px;
+        text-align: center;
+    }
+
+    main h2 {
+        font-size: 1.3em;
+    }
+
+    /* Header responsive */
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+        text-align: center;
+    }
+
+    header .logo img {
+        height: 50px; /* Reduce el tamaño del logo */
+    }
+
+    header .whats img {
+        height: 40px;
+        width: 40px;
+        margin: 10px 0;
+    }
+
+    /* Ajustar imágenes */
+    img {
+        max-width: 100%;
+        height: auto;
+        float: none;
+        display: block;
+        margin: 10px auto;
+    }
+
+    /* Ajustar el contenido para que no se salga */
+    .article-box {
+        width: 100%;
+        min-height: auto;
+    }
+
+    /* Asegurar que el texto no sea demasiado ancho */
+    p {
+        max-width: 90%;
+        margin: 0 auto;
+        text-align: justify;
+    }
+
+    /* Ajustar listas */
+    ul {
+        padding-left: 20px;
+    }
+
+    /* Asegurar que los botones sean accesibles */
+    .custom-link {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        font-size: 1.1em;
+    }
+
+    /* Autor responsivo */
+    .author-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .author-section img {
+        margin: 0 auto 10px auto;
+    }
+
+    /* Footer centrado */
+    footer {
+        text-align: center;
+        padding: 15px 0;
+    }
 }
