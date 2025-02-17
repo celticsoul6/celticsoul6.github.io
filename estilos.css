@@ -233,63 +233,53 @@ footer {
    /* 🌟 Ajustes para pantallas pequeñas (Móviles) */
 
 
-   /* 📌 Ajustes para móviles */
+ /* ✅ Ajustes para móviles */
 @media screen and (max-width: 768px) {
-    /* Alinear los artículos uno sobre otro */
-    .articles-container {
-        display: flex;
-        flex-direction: column; /* Hace que las tarjetas se apilen */
-        align-items: center; /* Centra los artículos */
-    }
-
-    .article-box {
-        width: 90%; /* Ajusta el tamaño */
-        max-width: 400px; /* Limita el ancho */
-        margin-bottom: 20px; /* Espacio entre cada artículo */
-    }
-
-    /* 📌 Ajustes del Header */
+    
+    /* 📌 LOGO Y HEADER */
     header {
-        display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 10px 0;
+        padding: 10px;
     }
 
     header .logo img {
-        height: 60px; /* Ajustar tamaño */
-        margin: 0 auto; /* Centrar */
+        height: 60px; /* Ajuste de tamaño para móvil */
+        margin-left: 0;
+        margin-bottom: 10px;
     }
 
     header .whats img {
-        height: 50px;
         width: 50px;
-        margin: 10px 0;
+        height: 50px;
+        margin-right: 0;
     }
 
-    /* 📌 Hacer que el botón de regresar quede fijo */
+    /* 📌 CUADROS DE ARTÍCULOS EN MÓVIL */
+    .articles-container {
+        display: flex;
+        flex-direction: column; /* ✅ Hace que los cuadros estén uno sobre otro */
+        align-items: center;
+    }
+
+    .article-box {
+        width: 90%; /* ✅ Ocupa casi toda la pantalla */
+        min-height: auto; /* Ajusta la altura según el contenido */
+        margin-bottom: 20px; /* Espacio entre cuadros */
+    }
+
+    /* 📌 BOTÓN DE REGRESAR */
     .link-container {
         position: fixed;
-        top: 15px;
+        top: 10px;
         left: 10px;
-        z-index: 999;
     }
 
-    /* 📌 Ajustes del Footer */
+    /* 📌 FOOTER FIJO ABAJO */
     footer {
-        position: fixed; /* Lo fija en la parte inferior */
+        position: fixed;
         bottom: 0;
         width: 100%;
-        text-align: center;
-        background-color: #004080;
-        color: white;
-        padding: 10px 0;
-    }
-
-    /* 📌 Ajustar el contenido principal */
-    main.article-content {
-        width: 95%;
-        padding: 15px;
     }
 }
