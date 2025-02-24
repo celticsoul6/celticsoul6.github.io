@@ -8,6 +8,7 @@
     <link rel="icon" href="img/favicon.png" type="image/png">
     
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -16,16 +17,15 @@
                 <img src="img/logo nuevo.png" alt="Logo del Blog">
             </a>
         </div>
-        <div class="whats.png">
-            <!-- Enlace directo para WhatsApp Web -->
-            <a href="https://web.whatsapp.com/send?phone=9983046886&text=Hola,%20me%20gustaría%20conocer%20más%20sobre%20las%20prácticas%20efectivas%20en%20recursos%20humanos." target="_blank">
-                <!-- Imagen que actúa como botón -->
-                <img src="img/whats2.png"  style="width: 80px; height: 80px; margin-right: 40px;">
-            </a>
-        </div>
-
-
+        
+        <div class="header-right">
+    <a href="sobreautor.html" class="sobre-autor">Sobre el Autor</a>
+    <a href="https://web.whatsapp.com/send?phone=9983046886&text=Hola,%20me%20gustaría%20conocer%20más%20sobre%20las%20prácticas%20efectivas%20en%20recursos%20humanos." target="_blank">
+        <img src="img/whats2.png" class="whats">
+    </a>
+</div>
     </header>
+
         <!-- Título y subtítulo -->
 <section class="blog-header">
     <h1>Explora nuestros artículos</h1>
@@ -40,7 +40,18 @@
 </main>
 
     <!-- Cuadros de Artículos -->
-    
+    <!-- Menú hamburguesa (visible solo en móviles) -->
+<div class="hamb-menu">
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamb">
+        <img src="img/hamb.png" alt="Menú" class="hamb-icon">
+    </label>
+    <nav class="menu">
+        <a href="sobreautor.html">Sobre el Autor</a>
+        <a href="https://web.whatsapp.com/send?phone=9983046886&text=Hola,%20me%20gustaría%20conocer%20más%20sobre%20las%20prácticas%20efectivas%20en%20recursos%20humanos." target="_blank">WhatsApp</a>
+    </nav>
+</div>
+
     
 <main class="articles">
     <a href="articulo1.html" class="article-box">
@@ -55,6 +66,11 @@
         <p>Cuando RRHH opera en crisis, los problemas se repiten. Transforma tu equipo de reactivo a estratégico y potencia el crecimiento empresarial.</p>
 
     </a><a href="articulo3.html" class="article-box">
+        <img src="img/objetivos.jpg" alt="Imagen del Artículo">
+        <h2>Alineación Estratégica entre RRHH y la Empresa</h2>
+        <p>Convierte RRHH en un socio estratégico alineando sus funciones con los objetivos empresariales para un impacto real y medible.</p>
+    </a>
+    </a><a href="articulo4.html" class="article-box">
         <img src="img/objetivos.jpg" alt="Imagen del Artículo">
         <h2>Alineación Estratégica entre RRHH y la Empresa</h2>
         <p>Convierte RRHH en un socio estratégico alineando sus funciones con los objetivos empresariales para un impacto real y medible.</p>
